@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>FitGym - Contact</title>
+ <style>
+    body {
+      background-image: url('gym-background.jpg');
+      background-size: cover;
+    }
+
+    .navbar {
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    .navbar a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .navbar a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    #membership {
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #f2f2f2;
+      border: 1px solid #ddd;
+    }
+
+    #rotating-images {
+      align: center;
+    }
+
+    body {
+ background-image: linear-gradient(to right, #ffa781, #5b0e2d);
+ background-size: cover;
+}
+
+
+ </style>
+
+<script>
+var imgArray = new Array(3);
+var index = 0;
+function cycle()
+{
+document.banner.src = imgArray[index].src;
+index++;
+if (index > 2)
+{ index = 0;
+}
+setTimeout(cycle, 2000);
+return;
+}
+function startup()
+{
+imgArray[0] = new Image; imgArray[0].src = "gym_img.avif";
+imgArray[1] = new Image; imgArray[1].src = "gym_img1.jpeg";
+imgArray[2] = new Image; imgArray[2].src = "gym_img2.jpeg";
+
+cycle();
+return;
+}
+
+</script>
+
+
+</head>
+<body onLoad="startup()">
+
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="membership.html">Membership</a>
+        <a href="Why_join_Us.html">Why Join Us</a>
+       </div>
+       
+<h1>Why Join Us</h1>
+<div id="rotating-images"></div>
+<img name="banner" src="gym_img.avif">
+ <h1>Innovative Workout Experience:</h1><p>Our gym offers a unique workout experience,
+  complete with cutting-edge equipment and workout spaces. We stay updated with the latest<br>
+   trends in fitness to provide you with the most efficient and engaging workout experience.</p>
+   <img src="gym_10.jpeg" alt="gym_10" style="float:right; margin-left:10px; margin-bottom: 2ch;">
+
+<h1><p>Exceptional Trainer Services:</h1> Our team of personal trainers is highly trained and certified.<br>
+  Provide tailored training programs: 
+  Each trainer at Exceptional Trainer Services understands that<br> 
+  individual fitness needs and goals vary.They will work closely with you to create a customized training<br>
+   program that aligns with your preferences and priorities.Focus on safe and effective training methods:<br>
+  Our trainers are skilled in a wide range of fitness techniques and exercise routines.<br>
+  They understand the importance of safety and efficiency in achieving optimal results.<br>
+  Prioritize continuous learning and development: Exceptional Trainer Services encourages<br>
+   its personal trainers to continuously enhance their knowledge and skills by staying updated<br> 
+   with the latest industry trends and best practices.This ensures that you receive the most effective <br>
+   and up-to-date training possible.
+  Offer support and encouragement: Personal trainers at Exceptional<br>
+  Trainer Services recognize that progress and success can be challenging.</p>
+ 
+<h1><p>Diverse Class Offerings:</h1> We understand that our clients have diverse interests and needs,<br>
+which is why we offer a wide range of class offerings, including group fitness classes,<br>
+personal training sessions, and specialized workshops.
+Through group workout classes, <br>
+community events, and member social gatherings, 
+you can make new friends and learn from each other's experiences.</p>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gym Membership</title>
+    <style>
+        body {
+          background-image: url('gym-background.jpg');
+          background-size: cover;
+        }
+
+        .navbar {
+          overflow: hidden;
+          background-color: #333;
+        }
+
+        .navbar a {
+          float: left;
+          display: block;
+          color: #f2f2f2;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+
+        .navbar a:hover {
+          background-color: #ddd;
+          color: black;
+        }
+        body {
+ background-image: linear-gradient(to right, #ffa781, #5b0e2d);
+ background-size: cover;
+}
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="membership.html">Membership</a>
+        <a href="Why_join_Us.html">Why Join Us</a>
+    </div>
+    <h1>Gym Membership</h1>
+    <img src="gym_img.avif" alt="Gym Membership" style="width:100%;">
+    <form>
+        <h1><label for="email">Enter your email:</label><br></h1>
+        <input type="email" id="email" name="email" required><br>
+        <br>
+        <h1><label for="membershipPlan">Choose a plan:</label><br></h1>
+        <input type="radio" id="basic" name="membershipPlan" value="Basic">
+        <h1><label for="basic">Basic - $40 plus .10% tax every month.</label><br></h1>
+        <input type="radio" id="standard" name="membershipPlan" value="Standard">
+        <h1><label for="standard">Standard - $80 plus .10% tax every month. (You can bring a guest with you)</label><br></h1>
+        <input type="radio" id="premium" name="membershipPlan" value="Premium">
+        <h1><label for="premium">Premium - $120 plus .10% tax every month (You can bring a guest with you, free protein shake and free parking) </label><br></h1>
+        <br>
+    <h1><button type="submit" id="submitBtn">Submit</button></h1>
+    </form>
+
+    <script>
+        function calculateTotalWithTax(price, taxRate) {
+            return price + price * taxRate;
+        }
+    
+        document.getElementById('submitBtn').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent form submission
+    
+            var selectedPlan = document.querySelector('input[name="membershipPlan"]:checked').value;
+            var price;
+            var taxRate = 0.10; // 10% tax rate
+    
+            switch (selectedPlan) {
+                case 'Basic':
+                    price = 40;
+                    break;
+                case 'Standard':
+                    price = 80;
+                    break;
+                case 'Premium':
+                    price = 120;
+                    break;
+                default:
+                    price = 0;
+            }
+    
+            var total = calculateTotalWithTax(price, taxRate);
+            var email = document.getElementById('email').value;
+    
+            alert('You selected the ' + selectedPlan + ' plan. The total amount with tax is $' + total.toFixed(2) + '. We will send a confirmation email to ' + email + '.');
+        });
+    </script>
+</body>
+</html>
